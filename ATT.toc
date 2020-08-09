@@ -1,0 +1,13 @@
+## Interface: 30300
+## Author - by Izy inspired by the old Party Ability Bars (PAB)
+## Contact/support at twitch.tv/imedia
+## Title: Arena Team Tracker
+## Version: v7.45 Classic
+## Notes: Track all selected cooldowns of your party members
+## SavedVariables: ATTDB
+
+libs\libs.xml
+Spells\spell_lib_defaults.lua
+Spells\spell_lib_modif.lua
+
+ATT.lua
