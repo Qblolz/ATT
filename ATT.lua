@@ -406,11 +406,13 @@ local function CreateIcon(anchor)
 		activeGUIDS[icon.GUID][icon.ability].cooldown =  0
 	end	
 		
-	icon.SetTimer = function(starttime,cooldown)	
-		CooldownFrame_Set(cd,starttime,cooldown,1)	
-		icon.active = true	
-		icon.starttime = starttime	
-		icon.cooldown = cooldown	
+	icon.SetTimer = function(starttime,cooldown)
+		if starttime and cooldown then
+			CooldownFrame_Set(cd,starttime,cooldown,1)	
+			icon.active = true	
+			icon.starttime = starttime	
+			icon.cooldown = cooldown	
+		end
 	end	
 	local texture = icon:CreateTexture(nil,"ARTWORK")	
 	texture:SetAllPoints(true)	
