@@ -23,7 +23,7 @@ local GetNumSubgroupMembers = function() return 4 end
 local CooldownFrame_Set = CooldownFrame_SetTimer
 local LGlow = LibStub("LibButtonGlow-1.0")
 local ChatPrefix  = "ATT-CheckC" 
-local ATTversion = 7.51
+local ATTversion = 7.52
 local ATTnewversion
 
 local db
@@ -106,7 +106,10 @@ local function Gconvertspellids(t)
 	for class,spells in pairs(t) do
 		temp[class] = {}
 		for spell, k in pairs(spells) do
-			temp[class][GetSpellInfo(spell)] = k
+			local spellName = GetSpellInfo(spell)
+			if spellName then
+				temp[class][spellName] = k
+			end
 		end
 	end
 	return temp
@@ -160,7 +163,10 @@ for k, v in pairs(cooldownResetters) do
 				if spellInfo2 then temp[spellInfo][spellInfo2] = 1 end
 			end
 		else
-			temp[GetSpellInfo(k)] = v
+			local spellInfo3 = GetSpellInfo(k)
+			if spellInfo3 then
+				temp[spellInfo3] = v
+			end
 		end
 	end
 end
@@ -563,8 +569,11 @@ function ATT:UpdateAnchor(unit, i, PvPTrinket, TraceID, tcooldown)
 				end
 				
 				if id and ability then	
-					local icon = icons[numIcons] or self:AddIcon(icons,anchor)            
-					icon.texture:SetTexture(self:FindAbilityIcon(ability, id))
+					local icon = icons[numIcons] or self:AddIcon(icons,anchor)   
+					local texture = self:FindAbilityIcon(ability, id)
+					if texture then
+						icon.texture:SetTexture(texture)
+					end
 					icon.GUID = anchor.GUID
 					icon.ability = ability
 					icon.abilityID = id
@@ -618,7 +627,10 @@ function ATT:UpdateAnchorIcon(anchor, numIcons, abilityTable)
 	local icons = anchor.icons
 	local ability, id, cooldown, maxcharges, talent, spellStatus = abilityTable.ability, abilityTable.id, abilityTable.cooldown, abilityTable.maxcharges, abilityTable.talent, abilityTable.spellStatus
 	local icon = icons[numIcons] or self:AddIcon(icons,anchor)
-	icon.texture:SetTexture(self:FindAbilityIcon(ability, id))
+	local texture = self:FindAbilityIcon(ability, id)
+	if texture then
+		icon.texture:SetTexture(texture)
+	end
 	icon.GUID = anchor.GUID
 	icon.ability = ability
 	icon.abilityID = id
@@ -1013,7 +1025,7 @@ function ATT:FindAbilityID(ability)
 			for _,sp in pairs(v) do
 				for _,SPELLID in pairs(sp) do
 					local spellName, spellRank, spellIcon = GetSpellInfo(SPELLID)
-					if(spellName == ability) then
+					if(spellName and spellName == ability) then
 						return SPELLID
 					end
 				end
@@ -1312,10 +1324,11 @@ function ATT:UpdateScrollBar()
 			local order = abilityTable.order or 1	
             spectexture  =  "Interface\\Buttons\\UI-MicroButton-"..db.classSelected
 		    abilitytexture = self:FindAbilityIcon(ability, id)
+			
 			if spellStatus ~= "DISABLED" then
-			    btns[line]:SetText("   |T"..abilitytexture..":18|t " ..ability)
+			    btns[line]:SetText("   |T"..(abilitytexture or "")..":18|t " ..ability)
 			else
-			    btns[line]:SetText("   |cff808080|T"..abilitytexture..":18|t " ..ability.."|r")
+			    btns[line]:SetText("   |cff808080|T"..(abilitytexture or "")..":18|t " ..ability.."|r")
 			end
 			
 			if btns[line]:GetText() ~= scrollframe.currentButton then
