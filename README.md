@@ -1,4 +1,4 @@
-# Alternative for PartyAbilityBars 3.3.5 version
+# ATT - alternative for PartyAbilityBars
 
 #### Install
 ##### After download from github - rename folder into "ATT"
