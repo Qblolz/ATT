@@ -981,6 +981,28 @@ function ATT:CHAT_MSG_ADDON(prefix, message, dist, sender)
 end
 
 
+function ATT:UNIT_SPELLCAST_SUCCEEDED(unit,ability)
+	if unit == "player" then return end
+	local pIndex = match(unit,"party[pet]*([1-4])")
+
+	-- XXX this only supports the english client (supposedly)
+	if pIndex then
+		pIndex = tonumber(pIndex)
+		if not anchors[pIndex] then return end -- Should not happen
+		local anchor = anchors[pIndex]
+		local actualUnit = "party"..pIndex -- don't query pet
+		if ability == "Activate Primary Spec" or ability == "Activate Secondary Spec" then
+			anchor.spec = nil
+			return
+		end
+		
+		if ability then
+			local _ability, _index = self:FindAbilityByName(anchor.spells, ability)	
+			self:StartCooldown(_ability.id, actualUnit) 
+		end
+	end
+end
+
 
 local function ATT_OnLoad(self)
 	self.useCrossAddonCommunication = true
