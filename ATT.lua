@@ -997,8 +997,10 @@ function ATT:UNIT_SPELLCAST_SUCCEEDED(unit,ability)
 		end
 		
 		if ability then
-			local _ability, _index = self:FindAbilityByName(anchor.spells, ability)	
-			self:StartCooldown(_ability.id, actualUnit) 
+			local _ability, _index = self:FindAbilityByName(anchor.spells, ability)
+			if _ability then
+				self:StartCooldown(_ability.id, actualUnit) 
+			end
 		end
 	end
 end
