@@ -401,9 +401,11 @@ local function CreateIcon(anchor)
 		CooldownFrame_Set(cd,0,0,0);	
 		icon.starttime = 0
 		activeGUIDS[icon.GUID] = activeGUIDS[icon.GUID] or {}	
-		activeGUIDS[icon.GUID][icon.ability] = {}	
-		activeGUIDS[icon.GUID][icon.ability].starttime = 0
-		activeGUIDS[icon.GUID][icon.ability].cooldown =  0
+		if activeGUIDS[icon.GUID][icon.ability] then
+			activeGUIDS[icon.GUID][icon.ability] = {}	
+			activeGUIDS[icon.GUID][icon.ability].starttime = 0
+			activeGUIDS[icon.GUID][icon.ability].cooldown =  0
+		end
 	end	
 		
 	icon.SetTimer = function(starttime,cooldown)
