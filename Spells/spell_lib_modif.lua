@@ -19,6 +19,8 @@ local addon, ATTdefault = ...
 	{["ability"] = 308726, ["id"] = 308726, ["cooldown"] = 120, ["race"] =  "Vulpera" },
 	{["ability"] = 310787, ["id"] = 310787, ["cooldown"] = 90, ["race"] =  "VoidElf" },
 	{["ability"] = 310773, ["id"] = 310773, ["cooldown"] = 45, ["race"] =  "Nightborne" },
+	{["ability"] = 316161, ["id"] = 316161, ["cooldown"] = 90, ["race"] =  "DarkIronDwarf" },
+	{["ability"] = 316465, ["id"] = 316465, ["cooldown"] = 60, ["race"] =  "Eredar" },
  }
  
  dbTrinket = {
