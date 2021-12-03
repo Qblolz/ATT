@@ -1,24 +1,23 @@
 local addon, ATTdefault = ...
  
  dbRacial = {
-	{["ability"] = 59752, ["id"] = 59752, ["cooldown"] = 120, ["race"] =  "Human" }, 
-	{["ability"] = 20572, ["id"] = 20572, ["cooldown"] = 120, ["race"] =  "Orc" }, 
-	{["ability"] = 20594, ["id"] = 20594, ["cooldown"] = 120, ["race"] =  "Dwarf" }, 
-	{["ability"] = 58984, ["id"] = 58984, ["cooldown"] = 120, ["race"] =  "NightElf" },
-	{["ability"] = 7744, ["id"] = 7744, ["cooldown"] = 120, ["race"] =  "Scourge" }, 
-	{["ability"] = 20549, ["id"] = 20549, ["cooldown"] = 120,  ["race"] =  "Tauren" },
-	{["ability"] = 20589, ["id"] = 20589, ["cooldown"] = 60,  ["race"] =  "Gnome" }, 
-	{["ability"] = 26297, ["id"] = 26297, ["cooldown"] = 180, ["race"] =  "Troll" }, 
-	{["ability"] = 90112, ["id"] = 90112, ["cooldown"] = 120, ["race"] =  "Naga" }, 
-	{["ability"] = 90115, ["id"] = 90115, ["cooldown"] = 120, ["race"] =  "Naga" }, 
-	{["ability"] = 90105, ["id"] = 90105, ["cooldown"] = 120, ["race"] =  "Goblin" }, 
-	{["ability"] = 90110, ["id"] = 90110, ["cooldown"] = 120, ["race"] =  "Goblin" }, 
-	{["ability"] = 90113, ["id"] = 90113, ["cooldown"] = 120, ["race"] =  "Queldo" }, 
-	{["ability"] = 90101, ["id"] = 90101, ["cooldown"] = 120, ["race"] =  "Pandaren" }, 
-	{["ability"] = 90108, ["id"] = 90108, ["cooldown"] = 120, ["race"] =  "Worgen" }, 
-	{["ability"] = 308726, ["id"] = 308726, ["cooldown"] = 120, ["race"] =  "Vulpera" },
-	{["ability"] = 310787, ["id"] = 310787, ["cooldown"] = 90, ["race"] =  "VoidElf" },
-	{["ability"] = 310773, ["id"] = 310773, ["cooldown"] = 45, ["race"] =  "Nightborne" },
+	{["ability"] = 316231, ["id"] = 316231, ["cooldown"] = 120, ["race"] =  "Human" }, 
+	{["ability"] = 316372, ["id"] = 316372, ["cooldown"] = 120, ["race"] =  "Orc" }, 
+	{["ability"] = 316243, ["id"] = 316243, ["cooldown"] = 120, ["race"] =  "Dwarf" }, 
+	{["ability"] = 316254, ["id"] = 316254, ["cooldown"] = 120, ["race"] =  "NightElf" },
+	{["ability"] = 316380, ["id"] = 316380, ["cooldown"] = 120, ["race"] =  "Scourge" },
+	{["ability"] = 316386, ["id"] = 316386, ["cooldown"] = 90,  ["race"] =  "Tauren" },
+	{["ability"] = 316386, ["id"] = 316386, ["cooldown"] = 120,  ["race"] =  "Gnome" }, 
+	{["ability"] = 316405, ["id"] = 316405, ["cooldown"] = 120, ["race"] =  "Troll" }, 
+	{["ability"] = 316413, ["id"] = 316413, ["cooldown"] = 120, ["race"] =  "Naga" },
+	{["ability"] = 316279, ["id"] = 316279, ["cooldown"] = 120, ["race"] =  "Draenei" },
+	{["ability"] = 316271, ["id"] = 316271, ["cooldown"] = 90, ["race"] =  "Goblin" },
+	{["ability"] = 316294, ["id"] = 316294, ["cooldown"] = 90, ["race"] =  "Queldo" }, 
+	{["ability"] = 316445, ["id"] = 316445, ["cooldown"] = 60, ["race"] =  "Pandaren" }, 
+	{["ability"] = 316289, ["id"] = 316289, ["cooldown"] = 90, ["race"] =  "Worgen" }, 
+	{["ability"] = 316455, ["id"] = 316455, ["cooldown"] = 90, ["race"] =  "Vulpera" },
+	{["ability"] = 316367, ["id"] = 316367, ["cooldown"] = 90, ["race"] =  "VoidElf" },
+	{["ability"] = 316431, ["id"] = 316431, ["cooldown"] = 45, ["race"] =  "Nightborne" },
 	{["ability"] = 316161, ["id"] = 316161, ["cooldown"] = 90, ["race"] =  "DarkIronDwarf" },
 	{["ability"] = 316465, ["id"] = 316465, ["cooldown"] = 60, ["race"] =  "Eredar" },
  }
@@ -281,19 +280,7 @@ dbSpecAbilities = {
 
 overallCooldowns = {
 	["Human"] = {
-		[59752] = 45,
-		[42292] = 45,
-	},
-	["Scourge"] = {
-		[7744] = 45,
-		[42292] = 45,
-	},
-	["Dwarf"] = {
-		[20594] = 45,
-		[42292] = 45,
-	},
-	["Goblin"] = {
-		[90105] = 15,
-		[90110] = 15,
+		[316231] = 90,
+		[42292] = 90,
 	},
 }
