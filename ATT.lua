@@ -1544,7 +1544,7 @@ function ATT:CreateAbilityEditor()
 	     'func', function()	
 	     		 print("Removed ability |cffFF4500" .. addeditbox:GetText().."|r")	
 	     		 local spec = dropdown2.value	
-                 local maxcharges = maxchargeseditbox.value	
+                 local maxcharges = 1
                  local spellStatus = spellStatusbox.value	
 	     		 local _ability, _index = self:FindAbilityByName(db.abilities[db.classSelected][spec or "ALL"], addeditbox:GetText())	
 	     		 if _ability and _index then table.remove(db.abilities[db.classSelected][spec], _index) end	
