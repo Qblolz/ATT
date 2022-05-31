@@ -1542,19 +1542,21 @@ function ATT:CreateAbilityEditor()
 	     'name', 'Remove',	
 	     'description', 'Remove ability',	
 	     'func', function()	
-	     		 print("Removed ability |cffFF4500" .. addeditbox:GetText().."|r")	
-	     		 local spec = dropdown2.value	
-                 local maxcharges = 1
-                 local spellStatus = spellStatusbox.value	
-	     		 local _ability, _index = self:FindAbilityByName(db.abilities[db.classSelected][spec or "ALL"], addeditbox:GetText())	
-	     		 if _ability and _index then table.remove(db.abilities[db.classSelected][spec], _index) end	
-	     		 addeditbox:SetText(""); 	
-	     		 ideditbox:SetText("");	
-	     		 cdeditbox:SetText("");	
-	     		 order:SetValue(1) 	
-	     		 child.currentButton = nil; 	
-	     		 ATT:UpdateScrollBar(); 	
-	     		 ATT:UpdateAnchors() 	
+	     		local spec = dropdown2.value
+	     		local _ability, _index = self:FindAbilityByName(db.abilities[db.classSelected][spec or "ALL"], addeditbox:GetText())
+	     		if _ability and _index then
+					table.remove(db.abilities[db.classSelected][spec], _index)
+					print("Removed ability |cffFF4500" .. addeditbox:GetText().."|r")
+					addeditbox:SetText("");
+					ideditbox:SetText("");
+					cdeditbox:SetText("");
+					order:SetValue(1)
+					child.currentButton = nil;
+					ATT:UpdateScrollBar();
+					ATT:UpdateAnchors()
+				else
+					print("Invalid/blank:|cffFF4500 Ability ID|r")
+				end
 	end)	
 	removebutton:SetPoint("TOPLEFT",addeditbox,"BOTTOMLEFT",120,-20)
 	removebutton:SetWidth(100)
