@@ -19,7 +19,7 @@ local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid	
 local UnitRace = UnitRace	
 local UnitLevel = UnitLevel
-local GetNumSubgroupMembers = function() return 4 end
+local GetNumSubgroupMembers = function() return 5 end
 local CooldownFrame_Set = CooldownFrame_SetTimer
 local LGlow = LibStub("LibButtonGlow-1.0")
 local ChatPrefix  = "ATT-CheckC" 
@@ -303,8 +303,9 @@ function ATT:FindCompactRaidFrameByUnit(unit)
 			elseif _G["TukuiPartyUnitButton"..i] then frame = _G["TukuiPartyUnitButton"..i]	
 			elseif _G["SUFHeaderpartyUnitButton"..i] then frame = _G["SUFHeaderpartyUnitButton"..i]	
 			elseif _G["Grid2LayoutHeader1UnitButton"..i] then frame = _G["Grid2LayoutHeader1UnitButton"..i]
-		end 	
-		
+			elseif _G["CompactRaidFrame"..i] then frame = _G["CompactRaidFrame"..i]
+		end
+
 		if frame and frame.unit and UnitGUID(frame.unit) == UnitGUID(unit) then	
 			return frame	
 		end	
@@ -489,7 +490,7 @@ function ATT:ToggleAnchorDisplay()
 	
 	for k=1,GetNumSubgroupMembers() do
 		local frame = _G["PartyMemberFrame"..k]
-		if not GetPartyMember(k) then
+		if k <= 4 and not GetPartyMember(k) then
 			local anchor = anchors[k]	
 			local icons = anchor.icons
 			for j=1,#icons do	
