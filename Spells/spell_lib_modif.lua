@@ -2,18 +2,18 @@ local addon, ATTdefault = ...
  
  dbRacial = {
 	{["ability"] = 316231, ["id"] = 316231, ["cooldown"] = 120, ["race"] =  "Human" }, 
-	{["ability"] = 316372, ["id"] = 316372, ["cooldown"] = 90, ["race"] =  "Orc" }, 
+	{["ability"] = 316372, ["id"] = 316372, ["cooldown"] = 90, ["race"] =  "Orc" },
 	{["ability"] = 316243, ["id"] = 316243, ["cooldown"] = 120, ["race"] =  "Dwarf" }, 
 	{["ability"] = 316254, ["id"] = 316254, ["cooldown"] = 120, ["race"] =  "NightElf" },
 	{["ability"] = 316380, ["id"] = 316380, ["cooldown"] = 120, ["race"] =  "Scourge" },
 	{["ability"] = 316386, ["id"] = 316386, ["cooldown"] = 90,  ["race"] =  "Tauren" },
 	{["ability"] = 316271, ["id"] = 316271, ["cooldown"] = 120,  ["race"] =  "Gnome" }, 
-	{["ability"] = 316405, ["id"] = 316405, ["cooldown"] = 90, ["race"] =  "Troll" }, 
+	{["ability"] = 316405, ["id"] = 316405, ["cooldown"] = 90, ["race"] =  "Troll" },
 	{["ability"] = 316413, ["id"] = 316413, ["cooldown"] = 90, ["race"] =  "Naga" },
 	{["ability"] = 316279, ["id"] = 316279, ["cooldown"] = 120, ["race"] =  "Draenei" },
 	{["ability"] = 316393, ["id"] = 316393, ["cooldown"] = 120, ["race"] =  "Goblin" },
 	{["ability"] = 316294, ["id"] = 316294, ["cooldown"] = 90, ["race"] =  "Queldo" }, 
-	{["ability"] = 316443, ["id"] = 316443, ["cooldown"] = 90, ["race"] =  "Pandaren" }, 
+	{["ability"] = 316443, ["id"] = 316443, ["cooldown"] = 90, ["race"] =  "Pandaren" },
 	{["ability"] = 316289, ["id"] = 316289, ["cooldown"] = 90, ["race"] =  "Worgen" }, 
 	{["ability"] = 316455, ["id"] = 316455, ["cooldown"] = 90, ["race"] =  "Vulpera" },
 	{["ability"] = 316367, ["id"] = 316367, ["cooldown"] = 90, ["race"] =  "VoidElf" },
@@ -22,6 +22,7 @@ local addon, ATTdefault = ...
 	{["ability"] = 316465, ["id"] = 316465, ["cooldown"] = 60, ["race"] =  "Eredar" },
 	{["ability"] = 310810, ["id"] = 310810, ["cooldown"] = 120, ["race"] =  "ZandalariTroll" },
 	{["ability"] = 319322, ["id"] = 319322, ["cooldown"] = 90, ["race"] =  "Lightforged" },
+	{["ability"] = 320552, ["id"] = 320552, ["cooldown"] = 120, ["race"] =  "Dracthyr" },
  }
  
  dbTrinket = {
