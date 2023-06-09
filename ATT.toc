@@ -3,7 +3,7 @@
 ## Contact/support at twitch.tv/imedia
 ## Title: Arena Team Tracker
 ## Version: v7.51
-## Notes: |@Version: 3@|Track all selected cooldowns of your party members
+## Notes: |@Version: 4@|Track all selected cooldowns of your party members
 ## SavedVariables: ATTDB
 
 libs\libs.xml
