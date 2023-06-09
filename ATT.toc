@@ -2,7 +2,7 @@
 ## Author - by Izy inspired by the old Party Ability Bars (PAB)
 ## Contact/support at twitch.tv/imedia
 ## Title: Arena Team Tracker
-## Version: v7.51
+## Version: v7.52
 ## Notes: |@Version: 4@|Track all selected cooldowns of your party members
 ## SavedVariables: ATTDB
 
