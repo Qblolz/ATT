@@ -13,15 +13,15 @@ local addon, ATTdefault = ...
 	{["ability"] = 316279, ["id"] = 316279, ["cooldown"] = 120, ["race"] =  "Draenei" },
 	{["ability"] = 316393, ["id"] = 316393, ["cooldown"] = 120, ["race"] =  "Goblin" },
 	{["ability"] = 316294, ["id"] = 316294, ["cooldown"] = 90, ["race"] =  "Queldo" }, 
-	{["ability"] = 316443, ["id"] = 316443, ["cooldown"] = 90, ["race"] =  "Pandaren" },
+	{["ability"] = 316443, ["id"] = 316443, ["cooldown"] = 120, ["race"] =  "Pandaren" },
 	{["ability"] = 316289, ["id"] = 316289, ["cooldown"] = 90, ["race"] =  "Worgen" }, 
 	{["ability"] = 316455, ["id"] = 316455, ["cooldown"] = 90, ["race"] =  "Vulpera" },
 	{["ability"] = 316367, ["id"] = 316367, ["cooldown"] = 90, ["race"] =  "VoidElf" },
 	{["ability"] = 316431, ["id"] = 316431, ["cooldown"] = 30, ["race"] =  "Nightborne" },
-	{["ability"] = 316161, ["id"] = 316161, ["cooldown"] = 90, ["race"] =  "DarkIronDwarf" },
+	{["ability"] = 316161, ["id"] = 316161, ["cooldown"] = 120, ["race"] =  "DarkIronDwarf" },
 	{["ability"] = 316465, ["id"] = 316465, ["cooldown"] = 60, ["race"] =  "Eredar" },
 	{["ability"] = 310810, ["id"] = 310810, ["cooldown"] = 120, ["race"] =  "ZandalariTroll" },
-	{["ability"] = 319322, ["id"] = 319322, ["cooldown"] = 90, ["race"] =  "Lightforged" },
+	{["ability"] = 319322, ["id"] = 319322, ["cooldown"] = 60, ["race"] =  "Lightforged" },
 	{["ability"] = 320552, ["id"] = 320552, ["cooldown"] = 120, ["race"] =  "Dracthyr" },
  }
  
