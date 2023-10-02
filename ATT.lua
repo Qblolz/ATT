@@ -520,6 +520,17 @@ function ATT:ToggleAnchorDisplay()
 	end	
 end
 
+function ATT.detectConstellation(unit)
+	for key = 1, 40 do
+		local _, _, icon, _, _, duration, expirationTime, _, _, _, spellID = UnitAura(unit, key, "HARMFUL")
+		if spellID ~= nil and constellations[spellID] then
+			return constellations[spellID]
+		end
+	end
+
+	return;
+end
+
 function ATT:UpdateAnchor(unit, i, PvPTrinket, TraceID, tcooldown)
     if not self:IsShown() then return end	
     local _,class = UnitClass(unit)	
@@ -561,44 +572,39 @@ function ATT:UpdateAnchor(unit, i, PvPTrinket, TraceID, tcooldown)
 			table.remove(icons, 1) 
 		end	 
 
-		-- Racials
+		-- constellations
 		if db.showRacial then
-			for abilityIndex, abilityTable in pairs(dbRacial) do
-				local abilityCheck, id, cooldown, maxcharges, talent, race = abilityTable.ability, abilityTable.id, abilityTable.cooldown, abilityTable.maxcharges, abilityTable.talent, abilityTable.race
-				
-				ability = nil  
-				_, raceID = UnitRace(unit);
-				if raceID == race then
-					ability = GetSpellInfo(abilityCheck)
-					id = abilityCheck 
-				end
-				
-				if id and ability then	
-					local icon = icons[numIcons] or self:AddIcon(icons,anchor)   
-					local texture = self:FindAbilityIcon(ability, id)
-					if texture then
-						icon.texture:SetTexture(texture)
-					end
-					icon.GUID = anchor.GUID
-					icon.ability = ability
-					icon.abilityID = id
-					icon.cooldown = cooldown
-					icon.maxcharges = maxcharges
-					icon.chargesText:SetText(maxcharges or "")
-					icon.inUse = true
-					icon.spec = talent
-					icon.spellStatus = spellStatus
-					ATT:ApplyIconTextureBorder(icon)
-				  
-					activeGUIDS[icon.GUID] = activeGUIDS[icon.GUID] or {}
-					if activeGUIDS[icon.GUID][icon.ability]  then
-						icon.SetTimer(activeGUIDS[icon.GUID][ability].starttime,activeGUIDS[icon.GUID][ability].cooldown)
-					else
-						icon.Stop()
-					end
-					numIcons = numIcons + 1
-				end
-			end 
+
+			local abilityTable = ATT.detectConstellation(unit)
+
+			if not abilityTable then return end
+
+			local id, _icon, cooldown = abilityTable.id, abilityTable.icon, abilityTable.cd
+			ability = GetSpellInfo(id)
+
+			local icon = icons[numIcons] or self:AddIcon(icons,anchor)
+			local texture = self:FindAbilityIcon(ability, id)
+			if texture then
+				icon.texture:SetTexture(texture)
+			end
+			icon.GUID = anchor.GUID
+			icon.ability = ability
+			icon.abilityID = id
+			icon.cooldown = cooldown
+			icon.maxcharges = maxcharges
+			icon.chargesText:SetText(maxcharges or "")
+			icon.inUse = true
+			icon.spec = talent
+			icon.spellStatus = spellStatus
+			ATT:ApplyIconTextureBorder(icon)
+
+			activeGUIDS[icon.GUID] = activeGUIDS[icon.GUID] or {}
+			if activeGUIDS[icon.GUID][icon.ability]  then
+				icon.SetTimer(activeGUIDS[icon.GUID][ability].starttime,activeGUIDS[icon.GUID][ability].cooldown)
+			else
+				icon.Stop()
+			end
+			numIcons = numIcons + 1
 		end
 		
 		local specSpells = dbSpecAbilities[anchor.class]

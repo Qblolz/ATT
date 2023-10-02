@@ -13,18 +13,137 @@ local addon, ATTdefault = ...
 	{["ability"] = 316279, ["id"] = 316279, ["cooldown"] = 120, ["race"] =  "Draenei" },
 	{["ability"] = 316393, ["id"] = 316393, ["cooldown"] = 120, ["race"] =  "Goblin" },
 	{["ability"] = 316294, ["id"] = 316294, ["cooldown"] = 90, ["race"] =  "Queldo" }, 
-	{["ability"] = 316443, ["id"] = 316443, ["cooldown"] = 120, ["race"] =  "Pandaren" },
+	{["ability"] = 316443, ["id"] = 316443, ["cooldown"] = 90, ["race"] =  "Pandaren" },
 	{["ability"] = 316289, ["id"] = 316289, ["cooldown"] = 90, ["race"] =  "Worgen" }, 
 	{["ability"] = 316455, ["id"] = 316455, ["cooldown"] = 90, ["race"] =  "Vulpera" },
 	{["ability"] = 316367, ["id"] = 316367, ["cooldown"] = 90, ["race"] =  "VoidElf" },
 	{["ability"] = 316431, ["id"] = 316431, ["cooldown"] = 30, ["race"] =  "Nightborne" },
-	{["ability"] = 316161, ["id"] = 316161, ["cooldown"] = 120, ["race"] =  "DarkIronDwarf" },
+	{["ability"] = 316161, ["id"] = 316161, ["cooldown"] = 90, ["race"] =  "DarkIronDwarf" },
 	{["ability"] = 316465, ["id"] = 316465, ["cooldown"] = 60, ["race"] =  "Eredar" },
 	{["ability"] = 310810, ["id"] = 310810, ["cooldown"] = 120, ["race"] =  "ZandalariTroll" },
-	{["ability"] = 319322, ["id"] = 319322, ["cooldown"] = 60, ["race"] =  "Lightforged" },
+	{["ability"] = 319322, ["id"] = 319322, ["cooldown"] = 90, ["race"] =  "Lightforged" },
 	{["ability"] = 320552, ["id"] = 320552, ["cooldown"] = 120, ["race"] =  "Dracthyr" },
  }
- 
+
+constellations = {
+	[371796] = {
+		id = 316231,
+		icon = select(3, GetSpellInfo(316231)),
+		cd = 120,
+	},
+	[371804] = {
+		id = 316380,
+		icon = select(3, GetSpellInfo(316380)),
+		cd = 120,
+	},
+	[371798] = {
+		id = 316413,
+		icon = select(3, GetSpellInfo(316413)),
+		cd = 90,
+	},
+	[371808] = {
+		id = 316455,
+		icon = select(3, GetSpellInfo(316455)),
+		cd = 90,
+	},
+	[371795] = {
+		id = 316393,
+		icon = select(3, GetSpellInfo(316393)),
+		cd = 120,
+	},
+	[371791] = {
+		id = 316279,
+		icon = select(3, GetSpellInfo(316279)),
+		cd = 120,
+	},
+	[371801] = {
+		id = 316372,
+		icon = select(3, GetSpellInfo(316372)),
+		cd = 90,
+	},
+	[371803] = {
+		id = 316294,
+		icon = select(3, GetSpellInfo(316294)),
+		cd = 90,
+	},
+	[371788] = { --синд
+		id = 316418,
+		alt = {["316421"] = 1, ["302387"] = 1, ["316419"] = 1, ["316420"] = 1},
+		icon = select(3, GetSpellInfo(316418)),
+		cd = 90,
+	},
+	[371805] = {
+		id = 316386,
+		icon = select(3, GetSpellInfo(316386)),
+		cd = 90,
+	},
+	[371806] = {
+		id = 316405,
+		icon = select(3, GetSpellInfo(316405)),
+		cd = 90,
+	},
+	[371800] = {
+		id = 316254,
+		icon = select(3, GetSpellInfo(316254)),
+		cd = 120,
+	},
+	[371802] = {
+		id = 316443,
+		icon = select(3, GetSpellInfo(316443)),
+		cd = 90,
+	},
+	[371792] = {
+		id = 316243,
+		icon = select(3, GetSpellInfo(316243)),
+		cd = 120,
+	},
+	[371794] = {
+		id = 316271,
+		icon = select(3, GetSpellInfo(316271)),
+		cd = 120,
+	},
+	[371809] = {
+		id = 316289,
+		icon = select(3, GetSpellInfo(316289)),
+		cd = 90,
+	},
+	[371799] = {
+		id = 316431,
+		icon = select(3, GetSpellInfo(316431)),
+		cd = 30,
+	},
+	[371807] = {
+		id = 316367,
+		icon = select(3, GetSpellInfo(316367)),
+		cd = 90,
+	},
+	[371789] = {
+		id = 316161,
+		icon = select(3, GetSpellInfo(316161)),
+		cd = 90,
+	},
+	[371793] = {
+		id = 316465,
+		icon = select(3, GetSpellInfo(316465)),
+		cd = 60,
+	},
+	[371810] = {
+		id = 310810,
+		icon = select(3, GetSpellInfo(310810)),
+		cd = 90,
+	},
+	[371797] = {
+		id = 319322,
+		icon = select(3, GetSpellInfo(319322)),
+		cd = 90,
+	},
+	[371790] = {
+		id = 320552,
+		icon = select(3, GetSpellInfo(320552)),
+		cd = 120,
+	}
+}
+
  dbTrinket = {
 	{["ability"] = 42292, ["id"] = 42292, ["cooldown"] = 120},
  }
