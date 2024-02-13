@@ -13,7 +13,7 @@ local addon, ATTdefault = ...
 	{["ability"] = 316279, ["id"] = 316279, ["cooldown"] = 120, ["race"] =  "Draenei" },
 	{["ability"] = 316393, ["id"] = 316393, ["cooldown"] = 120, ["race"] =  "Goblin" },
 	{["ability"] = 316294, ["id"] = 316294, ["cooldown"] = 90, ["race"] =  "Queldo" }, 
-	{["ability"] = 316443, ["id"] = 316443, ["cooldown"] = 90, ["race"] =  "Pandaren" },
+	{["ability"] = 316443, ["id"] = 316443, ["cooldown"] = 120, ["race"] =  "Pandaren" },
 	{["ability"] = 316289, ["id"] = 316289, ["cooldown"] = 90, ["race"] =  "Worgen" }, 
 	{["ability"] = 316455, ["id"] = 316455, ["cooldown"] = 90, ["race"] =  "Vulpera" },
 	{["ability"] = 316367, ["id"] = 316367, ["cooldown"] = 90, ["race"] =  "VoidElf" },
@@ -90,7 +90,7 @@ constellations = {
 	[371802] = {
 		id = 316443,
 		icon = select(3, GetSpellInfo(316443)),
-		cd = 90,
+		cd = 120,
 	},
 	[371792] = {
 		id = 316243,
