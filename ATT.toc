@@ -2,10 +2,11 @@
 ## Author - by Izy inspired by the old Party Ability Bars (PAB)
 ## Contact/support at twitch.tv/imedia
 ## Title: Arena Team Tracker
-## Version: v7.54
+## Version: v7.55
 ## Notes: |@Version: 4@|Track all selected cooldowns of your party members
 ## SavedVariables: ATTDB
 ## OptionalDeps: Blizzard_CompactRaidFrames, QbUI
+## X-Sirus-Update: https://github.com/Qblolz/ATT
 
 libs\libs.xml
 Spells\spell_lib_defaults.lua
