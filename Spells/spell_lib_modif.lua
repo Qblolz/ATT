@@ -1,20 +1,20 @@
 local addon, ATTdefault = ...
- 
- dbRacial = {
-	{["ability"] = 316231, ["id"] = 316231, ["cooldown"] = 120, ["race"] =  "Human" }, 
+
+dbRacial = {
+	{["ability"] = 316231, ["id"] = 316231, ["cooldown"] = 120, ["race"] =  "Human" },
 	{["ability"] = 316372, ["id"] = 316372, ["cooldown"] = 90, ["race"] =  "Orc" },
-	{["ability"] = 316243, ["id"] = 316243, ["cooldown"] = 120, ["race"] =  "Dwarf" }, 
+	{["ability"] = 316243, ["id"] = 316243, ["cooldown"] = 120, ["race"] =  "Dwarf" },
 	{["ability"] = 316254, ["id"] = 316254, ["cooldown"] = 120, ["race"] =  "NightElf" },
 	{["ability"] = 316380, ["id"] = 316380, ["cooldown"] = 120, ["race"] =  "Scourge" },
 	{["ability"] = 316386, ["id"] = 316386, ["cooldown"] = 90,  ["race"] =  "Tauren" },
-	{["ability"] = 316271, ["id"] = 316271, ["cooldown"] = 120,  ["race"] =  "Gnome" }, 
+	{["ability"] = 316271, ["id"] = 316271, ["cooldown"] = 120,  ["race"] =  "Gnome" },
 	{["ability"] = 316405, ["id"] = 316405, ["cooldown"] = 90, ["race"] =  "Troll" },
 	{["ability"] = 316413, ["id"] = 316413, ["cooldown"] = 90, ["race"] =  "Naga" },
 	{["ability"] = 316279, ["id"] = 316279, ["cooldown"] = 120, ["race"] =  "Draenei" },
 	{["ability"] = 316393, ["id"] = 316393, ["cooldown"] = 120, ["race"] =  "Goblin" },
-	{["ability"] = 316294, ["id"] = 316294, ["cooldown"] = 90, ["race"] =  "Queldo" }, 
+	{["ability"] = 316294, ["id"] = 316294, ["cooldown"] = 90, ["race"] =  "Queldo" },
 	{["ability"] = 316443, ["id"] = 316443, ["cooldown"] = 120, ["race"] =  "Pandaren" },
-	{["ability"] = 316289, ["id"] = 316289, ["cooldown"] = 90, ["race"] =  "Worgen" }, 
+	{["ability"] = 316289, ["id"] = 316289, ["cooldown"] = 90, ["race"] =  "Worgen" },
 	{["ability"] = 316455, ["id"] = 316455, ["cooldown"] = 90, ["race"] =  "Vulpera" },
 	{["ability"] = 316367, ["id"] = 316367, ["cooldown"] = 90, ["race"] =  "VoidElf" },
 	{["ability"] = 316431, ["id"] = 316431, ["cooldown"] = 40, ["race"] =  "Nightborne" },
@@ -23,7 +23,12 @@ local addon, ATTdefault = ...
 	{["ability"] = 310810, ["id"] = 310810, ["cooldown"] = 120, ["race"] =  "ZandalariTroll" },
 	{["ability"] = 319322, ["id"] = 319322, ["cooldown"] = 90, ["race"] =  "Lightforged" },
 	{["ability"] = 320552, ["id"] = 320552, ["cooldown"] = 120, ["race"] =  "Dracthyr" },
- }
+	{["ability"] = 316418, ["id"] = 316418, ["cooldown"] = 120, ["race"] =  "Sind" },
+	{["ability"] = 316421, ["id"] = 316421, ["cooldown"] = 120, ["race"] =  "Sind" },
+	{["ability"] = 302387, ["id"] = 302387, ["cooldown"] = 120, ["race"] =  "Sind" },
+	{["ability"] = 316419, ["id"] = 316419, ["cooldown"] = 120, ["race"] =  "Sind" },
+	{["ability"] = 316420, ["id"] = 316420, ["cooldown"] = 120, ["race"] =  "Sind" },
+}
 
 constellations = {
 	[371796] = {
@@ -70,12 +75,12 @@ constellations = {
 		id = 316418,
 		alt = {["316421"] = 1, ["302387"] = 1, ["316419"] = 1, ["316420"] = 1},
 		icon = select(3, GetSpellInfo(316418)),
-		cd = 90,
+		cd = 120,
 	},
 	[371805] = {
 		id = 316386,
 		icon = select(3, GetSpellInfo(316386)),
-		cd = 90,
+		cd = 120,
 	},
 	[371806] = {
 		id = 316405,
@@ -144,11 +149,11 @@ constellations = {
 	}
 }
 
- dbTrinket = {
+dbTrinket = {
 	{["ability"] = 42292, ["id"] = 42292, ["cooldown"] = 120},
- }
- 
- dbSpecs = {
+}
+
+dbSpecs = {
 	["MAGE"] = {
 		["Arcane"] = 1,
 		["Fire"] = 2,
@@ -199,8 +204,8 @@ constellations = {
 		["Fury"] = 2,
 		["Protection"] = 3,
 	},
- }
- 
+}
+
 dbSpecAbilities = {
 	["ROGUE"] = {
 		[14185] = { -- Preparation
