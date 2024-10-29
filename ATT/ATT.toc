@@ -1,0 +1,22 @@
+## Interface: 303000
+## Author: Qblolz
+## Title: Ability Team Tracker
+## Version: 152
+## Notes: |@Version: 5@|Track cooldowns of your party members.
+## SavedVariables: ATTDB
+## SavedVariablesPerCharacter: ATTCharDB
+## IconTexture: Interface\AddOns\ATT\libs\icon.png
+## OptionalDeps: Blizzard_CompactRaidFrames
+
+Libs\embeds.xml
+
+locales\enUS.lua
+locales\ruRU.lua
+locales\zhCN.lua
+constants.lua
+Spells_Wrath\spell_lib_defaults.lua
+Spells_Wrath\spell_lib_modif.lua
+Spells_Wrath\spell_lib_import.lua
+CooldownsSync.lua
+
+ATT_Wrath.lua

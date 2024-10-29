@@ -1,0 +1,72 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+	<Button name="ATTButtonTemplateClassic" hidden="true" virtual="true">
+		<Animations>
+			<AnimationGroup parentKey="flashAnim" setToFinalAlpha="true">
+				<Alpha childKey="flash" smoothing="OUT" duration="1" order="1" fromAlpha="1" toAlpha="0" />
+			</AnimationGroup>
+		</Animations>
+		<Layers>
+			<Layer level="OVERLAY">
+				<Texture parentKey="flash" alpha="0" name="overlayflash" alphaMode="ADD">
+					<Color r="1.0" g="1.0" b="1.0" a="0.5"/>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Button>
+
+	<Button name="ATTButtonTemplate" inherits="ActionButtonTemplate" hidden="true" virtual="true">
+		<Animations>
+			<AnimationGroup parentKey="newitemglowAnim" setToFinalAlpha="true">
+				<Alpha childKey="NewItemTexture" smoothing="OUT" duration="1.5" order="1" fromAlpha="1" toAlpha="0" />
+			</AnimationGroup>
+			<AnimationGroup parentKey="flashAnim" setToFinalAlpha="true">
+				<Alpha childKey="flash" smoothing="OUT" duration="1.2" order="1" fromAlpha="1" toAlpha="0" />
+			</AnimationGroup>
+		</Animations>
+		<Layers>
+			<Layer level="OVERLAY">
+				<Texture parentKey="flash" hidden="false" alpha="0" alphaMode="ADD">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="NewItemTexture" alpha="0" hidden="false" alphaMode="ADD">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Button>
+
+	<Frame name="ATTActivationAlert" virtual="true">
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture parentKey="ProcStartFlipbook" alpha="1">
+					<Size x="150" y="150"/>
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="ProcLoopFlipbook" alpha="0" setAllPoints="true"/>
+			</Layer>
+		</Layers>
+		<Animations>
+			<AnimationGroup parentKey="ProcLoop" looping="REPEAT">
+				<Alpha childKey="ProcLoopFlipbook" duration=".001" order="0" fromAlpha="1" toAlpha="1"/>
+				<FlipBook parentKey="FlipAnim" childKey="ProcLoopFlipbook" duration="1" order="0" flipBookRows="6" flipBookColumns="5" flipBookFrames="30" />
+			</AnimationGroup>
+
+			<AnimationGroup parentKey="ProcStartAnim" setToFinalAlpha="true">
+				<Alpha childKey="ProcStartFlipbook" duration=".001" order="0" fromAlpha="1" toAlpha="1"/>
+				<Alpha childKey="ProcStartFlipbook" duration=".001" order="1" fromAlpha="1" toAlpha="0"/>
+				<Scripts>
+					<OnFinished method="OnFinished"/>
+				</Scripts>
+			</AnimationGroup>
+		</Animations>
+		<Scripts>
+			<OnHide method="OnHide"/>
+		</Scripts>
+	</Frame>
+</Ui>
