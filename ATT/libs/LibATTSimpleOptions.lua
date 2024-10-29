@@ -1992,7 +1992,7 @@ do
 
 		tinsert(UISpecialFrames, panel:GetName())
 		panel:SetFrameLevel(panel:GetFrameLevel() + 3)
-		panel:SetScale(1.5)
+		panel:SetScale(1.2)
 		panel:EnableMouse(true)
         panel:SetMovable(true)
 		panel:SetClampedToScreen(true)
