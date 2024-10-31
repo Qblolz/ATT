@@ -1406,6 +1406,9 @@ function ATT:UNIT_SPELLCAST_SUCCEEDED(unit, ability)
     local guid = UnitGUID(unit)
 
     local abilityData = self:FindAbilityByName(anchor.icons, ability)
+    if not abilityData then
+    	return
+    end
     local SentID = abilityData.abilityID
 
     if SentID == 20594 and unit and guid then self:StartCooldown(GetSpellInfo(20594), unit, SentID) end
