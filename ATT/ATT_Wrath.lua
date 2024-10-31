@@ -1400,18 +1400,26 @@ function ATT:IconGlow(unit, spellName, event, unitDest, SentID)
     end
 end
 
-function ATT:UNIT_SPELLCAST_SUCCEEDED(unit, _, SentID) ---check anchor
+function ATT:UNIT_SPELLCAST_SUCCEEDED(unit, ability)
     local anchor = self:GetAnchorByUnit(unit)
     if not anchor then return end
     local guid = UnitGUID(unit)
-    -- Feign Death workaround fix
+
+    local SentID = self:FindAbilityByName(anchor.icons, ability)
+
     if SentID == 20594 and unit and guid then self:StartCooldown(GetSpellInfo(20594), unit, SentID) end
     if SentID == 42292 and unit and guid then
         self:StartCooldown(GetSpellInfo(42292), unit, SentID, dbAuraRemoved[GetSpellInfo(SentID)] and "AuraOn")
     end
     if SentID == 5384 and unit and guid then
-        self:StartCooldown(GetSpellInfo(5384), unit, 5384, "AuraOn");
+        self:StartCooldown(GetSpellInfo(5384), unit, 5384, "Aura51514n");
         isFWW["fd" .. guid] = guid
+    end
+    if SentID == 51514 and unit and guid then
+    	self:StartCooldown(GetSpellInfo(51514), unit, SentID)
+    end
+    if SentID == 17928 and unit and guid then
+        self:StartCooldown(GetSpellInfo(17928), unit, SentID)
     end
 end
 
