@@ -233,6 +233,25 @@ function ATT:ProcessInspect(unit, guid, specInspect, gearInspect)
                     end
                 end
             end
+            for k = 1, 12 do
+                local itemLink = GetInventoryItemLink(unit, INVSLOTS[k])
+                local _, _, Color, Ltype, itemID, Enchant, Gem1, Gem2, Gem3, Gem4,
+                    Suffix, Unique, LinkLvl, Name = string.find(itemLink,
+                    "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
+                if itemID then
+                    itemID = tonumber(itemID)
+                    local hasItemBonus = itemBonus[itemID]
+                    if hasItemBonus then
+                        dbInspect[guid][hasItemBonus] = 1
+                        dbInspectGear[guid][hasItemBonus] = 1
+                    end
+                    local hasSetBonus = setBonus[itemID]
+                    if hasSetBonus then
+                        dbInspect[guid][hasSetBonus] = dbInspect[guid][hasSetBonus] and (dbInspect[guid][hasSetBonus] + 1) or 1
+                        dbInspectGear[guid][hasSetBonus] = dbInspect[guid][hasSetBonus] and (dbInspect[guid][hasSetBonus] + 1) or 1
+                    end
+                end
+            end
         else
             if dbInspectGear[guid] then
                 for itemID, value in pairs (dbInspectGear[guid]) do
@@ -1409,6 +1428,7 @@ function ATT:UNIT_SPELLCAST_SUCCEEDED(unit, ability)
     if not abilityData then
     	return
     end
+
     local SentID = abilityData.abilityID
 
     if SentID == 20594 and unit and guid then self:StartCooldown(GetSpellInfo(20594), unit, SentID) end
@@ -1424,6 +1444,9 @@ function ATT:UNIT_SPELLCAST_SUCCEEDED(unit, ability)
     end
     if SentID == 17928 and unit and guid then
         self:StartCooldown(GetSpellInfo(17928), unit, SentID)
+    end
+    if SentID == 320552 and unit and guid then
+        self:StartCooldown(GetSpellInfo(320552), unit, SentID)
     end
 end
 
