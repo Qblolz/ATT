@@ -205,6 +205,7 @@ function ATT:ProcessInspect(unit, guid, specInspect, gearInspect)
     -- Talent Check / Inspect
     if unit and specInspect and guid then
         local _, class, classID = UnitClass(unit)
+        classID = tonumber(classID)
 
         dbInspect[guid] = {}
         local isInspect = (guid ~= PlayerGUID) and true --here
@@ -261,7 +262,9 @@ function ATT:ProcessInspect(unit, guid, specInspect, gearInspect)
         end
         if isInspect then
             for gspellID, gTable in pairs(dbModifGlyph) do
-                if gspellID and classID and db.isEnabledSpell[class] == "table" and db.isEnabledSpell[class][gspellID] and classID == gTable.class then dbInspect[guid][gspellID] = 1 end
+                if gspellID and classID and db.isEnabledSpell[class] and db.isEnabledSpell[class][gspellID] and classID == gTable.class then
+                    dbInspect[guid][gTable.mod] = 1
+                end
             end
         else
             for i = 1, 6 do
