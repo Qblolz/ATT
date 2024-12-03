@@ -236,20 +236,22 @@ function ATT:ProcessInspect(unit, guid, specInspect, gearInspect)
             end
             for k = 1, 12 do
                 local itemLink = GetInventoryItemLink(unit, INVSLOTS[k])
-                local _, _, Color, Ltype, itemID, Enchant, Gem1, Gem2, Gem3, Gem4,
-                    Suffix, Unique, LinkLvl, Name = string.find(itemLink,
-                    "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
-                if itemID then
-                    itemID = tonumber(itemID)
-                    local hasItemBonus = itemBonus[itemID]
-                    if hasItemBonus then
-                        dbInspect[guid][hasItemBonus] = 1
-                        dbInspectGear[guid][hasItemBonus] = 1
-                    end
-                    local hasSetBonus = setBonus[itemID]
-                    if hasSetBonus then
-                        dbInspect[guid][hasSetBonus] = dbInspect[guid][hasSetBonus] and (dbInspect[guid][hasSetBonus] + 1) or 1
-                        dbInspectGear[guid][hasSetBonus] = dbInspect[guid][hasSetBonus] and (dbInspect[guid][hasSetBonus] + 1) or 1
+                if itemLink then
+                    local _, _, Color, Ltype, itemID, Enchant, Gem1, Gem2, Gem3, Gem4,
+                        Suffix, Unique, LinkLvl, Name = string.find(itemLink,
+                        "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*):?(%-?%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
+                    if itemID then
+                        itemID = tonumber(itemID)
+                        local hasItemBonus = itemBonus[itemID]
+                        if hasItemBonus then
+                            dbInspect[guid][hasItemBonus] = 1
+                            dbInspectGear[guid][hasItemBonus] = 1
+                        end
+                        local hasSetBonus = setBonus[itemID]
+                        if hasSetBonus then
+                            dbInspect[guid][hasSetBonus] = dbInspect[guid][hasSetBonus] and (dbInspect[guid][hasSetBonus] + 1) or 1
+                            dbInspectGear[guid][hasSetBonus] = dbInspect[guid][hasSetBonus] and (dbInspect[guid][hasSetBonus] + 1) or 1
+                        end
                     end
                 end
             end
