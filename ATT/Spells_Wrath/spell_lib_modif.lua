@@ -74,7 +74,7 @@ ATTdbs.dbModif = {
 	[12043] = { ["mod"] = GetSpellInfo(44379), ["rank"] = { 18, 36, }, }, --% presence of mind
 	[12042] = { ["mod"] = GetSpellInfo(44379), ["rank"] = { 18, 36, }, }, --% presence of mind
 
-	[10308] = { ["mod"] = GetSpellInfo(20488), ["rank"] = { 10, 20, }, }, --hoj *
+	[10308] = { ["mod"] = GetSpellInfo(20488), ["rank"] = { 10, 20, }, ["mod2"] = GetSpellInfo(53696), ["rank2"] = { 5, 10, }, }, --hoj *
 	[10278] = { ["mod"] = GetSpellInfo(20175), ["rank"] = { 60, 120, }, }, --blessing *
 	[642] = { ["mod"] = GetSpellInfo(31849), ["rank"] = { 30, 60, }, }, --divine shield *
 	[498] = { ["mod"] = GetSpellInfo(31849), ["rank"] = { 30, 60, }, }, --divine protection *

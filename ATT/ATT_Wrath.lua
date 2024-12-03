@@ -975,6 +975,13 @@ function ATT:UpdateAnchorGUID(anchor, unit, guid)
                     cooldown = cooldown - (modif.rank[newcd] or modif.rank[1])
                 end
 
+                if name and modif and modif.mod2 then
+                	if dbInspected and dbInspected[modif.mod2] and dbInspected[modif.mod2] > 0 then
+                        local newcd = dbInspected[modif.mod2]
+                        cooldown = cooldown - (modif.rank2[newcd] or modif.rank2[1])
+                    end
+                end
+
                 if name and glyphModif and dbInspected and dbInspected[glyphModif.mod] then cooldown = cooldown - glyphModif.cd end
 
                 if name and bonusModif and dbInspected and dbInspected[bonusModif.mod] and dbInspected[bonusModif.mod] >= bonusModif.rank then
