@@ -264,7 +264,7 @@ function ATT:ProcessInspect(unit, guid, specInspect, gearInspect)
         end
         if isInspect then
             for gspellID, gTable in pairs(dbModifGlyph) do
-                if gspellID and classID and db.isEnabledSpell[class] and db.isEnabledSpell[class][gspellID] and classID == gTable.class then
+                if gspellID and classID and db.isEnabledSpell[class] and db.isEnabledSpell[class][gTable.mod] and classID == gTable.class then
                     dbInspect[guid][gTable.mod] = 1
                 end
             end
