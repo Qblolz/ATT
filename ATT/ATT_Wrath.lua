@@ -1552,7 +1552,7 @@ function ATT:PLAYER_EQUIPMENT_CHANGED(item)
 end
 
 function ATT:CVAR_UPDATE(cvar)
-    if cvar == "C_CVAR_USE_COMPACT_PARTY_FRAMES" then
+    if cvar == "USE_COMPACT_PARTY_FRAMES" then
         C_Timer:After(0.1, function() self:ApplyAnchorSettings(); end)
     end
 end
