@@ -1,7 +1,7 @@
 ## Interface: 303000
 ## Author: Qblolz
 ## Title: Ability Team Tracker
-## Version: 158
+## Version: 159
 ## Notes: |@Version: 5@|Track cooldowns of your party members.
 ## SavedVariables: ATTDB
 ## SavedVariablesPerCharacter: ATTCharDB
