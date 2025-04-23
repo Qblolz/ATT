@@ -459,7 +459,7 @@ function ATT:SavePositions()
 end
 
 function ATT:CheckBlizzFrames()
-    local compact = C_CVar:GetValue("C_CVAR_USE_COMPACT_SOLO_FRAMES")
+    local compact = GetCVarBool("useCompactPartyFrames")
     local UseCombinedGroups = CompactRaidFrameManager_GetSetting and CompactRaidFrameManager_GetSetting("KeepGroupsTogether")
     local frametype = nil
 
@@ -1682,7 +1682,7 @@ local function ATT_OnLoad(self)
 
     ATTOnUpdateFrame:SetScript("OnUpdate", On_Update)
 
-    if C_CVar:GetValue("C_CVAR_USE_COMPACT_PARTY_FRAMES") then
+    if GetCVarBool("useCompactPartyFrames") then
         hooksecurefunc("CompactUnitFrameProfiles_ActivateRaidProfile", function() ATT:ApplyAnchorSettings(); end)
         hooksecurefunc("CompactRaidFrameManager_UpdateShown", function() ATT:ApplyAnchorSettings(); end)
     end
