@@ -313,7 +313,7 @@ ATTdbs.constellations = {
         ['constellation'] = 371810, ['ability'] = 375013, ['texture'] = select(3, GetSpellInfo(375013)), ['cooldown'] = 120,
     },
     [371797] = {
-        ['constellation'] = 371797, ['ability'] = 319322, ['texture'] = select(3, GetSpellInfo(319322)), ['cooldown'] = 120,
+        ['constellation'] = 371797, ['ability'] = 375033, ['texture'] = select(3, GetSpellInfo(375033)), ['cooldown'] = 120,
     },
     [371790] = {
         ['constellation'] = 371790, ['ability'] = 375040, ['texture'] = select(3, GetSpellInfo(375040)), ['cooldown'] = 120,
