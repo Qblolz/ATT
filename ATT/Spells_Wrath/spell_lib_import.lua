@@ -248,82 +248,82 @@ ATTdbs.dbImport = {
 
 ATTdbs.constellations = {
     [371796] = {
-        ['constellation'] = 371796, ['ability'] = 316231, ['texture'] = select(3, GetSpellInfo(316231)), ['cooldown'] = 120,
+        ['constellation'] = 371796, ['ability'] = 375015, ['texture'] = select(3, GetSpellInfo(375015)), ['cooldown'] = 120,
     },
     [371804] = {
-        ['constellation'] = 371804, ['ability'] = 316380, ['texture'] = select(3, GetSpellInfo(316380)), ['cooldown'] = 120,
+        ['constellation'] = 371804, ['ability'] = 374992, ['texture'] = select(3, GetSpellInfo(374992)), ['cooldown'] = 120,
     },
     [371798] = {
-        ['constellation'] = 371798, ['ability'] = 316413, ['texture'] = select(3, GetSpellInfo(316413)), ['cooldown'] = 90,
+        ['constellation'] = 371798, ['ability'] = 374999, ['texture'] = select(3, GetSpellInfo(374999)), ['cooldown'] = 120,
     },
     [371808] = {
-        ['constellation'] = 371808, ['ability'] = 316455, ['texture'] = select(3, GetSpellInfo(316455)), ['cooldown'] = 90,
+        ['constellation'] = 371808, ['ability'] = 375038, ['texture'] = select(3, GetSpellInfo(375038)), ['cooldown'] = 120,
     },
     [371795] = {
-        ['constellation'] = 371795, ['ability'] = 316393, ['texture'] = select(3, GetSpellInfo(316393)), ['cooldown'] = 120,
+        ['constellation'] = 371795, ['ability'] = 374997, ['texture'] = select(3, GetSpellInfo(374997)), ['cooldown'] = 120,
     },
     [371791] = {
-        ['constellation'] = 371791, ['ability'] = 316279, ['texture'] = select(3, GetSpellInfo(316279)), ['cooldown'] = 120,
+        ['constellation'] = 371791, ['ability'] = 375020, ['texture'] = select(3, GetSpellInfo(375020)), ['cooldown'] = 120,
     },
     [371801] = {
-        ['constellation'] = 371801, ['ability'] = 316372, ['texture'] = select(3, GetSpellInfo(316372)), ['cooldown'] = 90,
+        ['constellation'] = 371801, ['ability'] = 374988, ['texture'] = select(3, GetSpellInfo(374988)), ['cooldown'] = 120,
     },
     [371803] = {
-        ['constellation'] = 371803, ['ability'] = 316294, ['texture'] = select(3, GetSpellInfo(316294)), ['cooldown'] = 90,
+        ['constellation'] = 371803, ['ability'] = 375024, ['texture'] = select(3, GetSpellInfo(375024)), ['cooldown'] = 120,
     },
     [371788] = {
-        ['constellation'] = 371788, ['ability'] = 316418, ['texture'] = select(3, GetSpellInfo(316418)), ['cooldown'] = 120,
+        ['constellation'] = 371788, ['ability'] = 375001, ['texture'] = select(3, GetSpellInfo(316418)), ['cooldown'] = 120,
         ['alt'] = {[316421] = 1, [302387] = 1, [316419] = 1, [316420] = 1},
     },
     [371805] = {
-        ['constellation'] = 371805, ['ability'] = 316386, ['texture'] = select(3, GetSpellInfo(316386)), ['cooldown'] = 120,
+        ['constellation'] = 371805, ['ability'] = 374994, ['texture'] = select(3, GetSpellInfo(316386)), ['cooldown'] = 120,
     },
     [371806] = {
-        ['constellation'] = 371806, ['ability'] = 316405, ['texture'] = select(3, GetSpellInfo(316405)), ['cooldown'] = 90,
+        ['constellation'] = 371806, ['ability'] = 374996, ['texture'] = select(3, GetSpellInfo(374996)), ['cooldown'] = 120,
     },
     [371800] = {
-        ['constellation'] = 371800, ['ability'] = 316254, ['texture'] = select(3, GetSpellInfo(316254)), ['cooldown'] = 120,
+        ['constellation'] = 371800, ['ability'] = 375018, ['texture'] = select(3, GetSpellInfo(316254)), ['cooldown'] = 120,
         --['alt'] = {[130] = 1}, -- debug
     },
     [371802] = {
-        ['constellation'] = 371802, ['ability'] = 316443, ['texture'] = select(3, GetSpellInfo(316443)), ['cooldown'] = 120,
+        ['constellation'] = 371802, ['ability'] = 375035, ['texture'] = select(3, GetSpellInfo(375035)), ['cooldown'] = 120,
     },
     [371792] = {
-        ['constellation'] = 371792, ['ability'] = 316243, ['texture'] = select(3, GetSpellInfo(316243)), ['cooldown'] = 120,
+        ['constellation'] = 371792, ['ability'] = 375016, ['texture'] = select(3, GetSpellInfo(375016)), ['cooldown'] = 120,
     },
     [371794] = {
-        ['constellation'] = 371794, ['ability'] = 316271, ['texture'] = select(3, GetSpellInfo(316271)), ['cooldown'] = 120,
+        ['constellation'] = 371794, ['ability'] = 375019, ['texture'] = select(3, GetSpellInfo(375019)), ['cooldown'] = 120,
     },
     [371809] = {
-        ['constellation'] = 371809, ['ability'] = 316289, ['texture'] = select(3, GetSpellInfo(316289)), ['cooldown'] = 90,
+        ['constellation'] = 371809, ['ability'] = 375022, ['texture'] = select(3, GetSpellInfo(375022)), ['cooldown'] = 120,
     },
     [371799] = {
-        ['constellation'] = 371799, ['ability'] = 316431, ['texture'] = select(3, GetSpellInfo(316431)), ['cooldown'] = 40,
+        ['constellation'] = 371799, ['ability'] = 375006, ['texture'] = select(3, GetSpellInfo(375006)), ['cooldown'] = 120,
     },
     [371807] = {
-        ['constellation'] = 371807, ['ability'] = 316367, ['texture'] = select(3, GetSpellInfo(316367)), ['cooldown'] = 90,
+        ['constellation'] = 371807, ['ability'] = 375026, ['texture'] = select(3, GetSpellInfo(375026)), ['cooldown'] = 120,
     },
     [371789] = {
-        ['constellation'] = 371789, ['ability'] = 316161, ['texture'] = select(3, GetSpellInfo(316161)), ['cooldown'] = 90,
+        ['constellation'] = 371789, ['ability'] = 375029, ['texture'] = select(3, GetSpellInfo(375029)), ['cooldown'] = 120,
     },
     [371793] = {
-        ['constellation'] = 371793, ['ability'] = 316465, ['texture'] = select(3, GetSpellInfo(316465)), ['cooldown'] = 60,
+        ['constellation'] = 371793, ['ability'] = 375010, ['texture'] = select(3, GetSpellInfo(375010)), ['cooldown'] = 120,
     },
     [371810] = {
-        ['constellation'] = 371810, ['ability'] = 310810, ['texture'] = select(3, GetSpellInfo(310810)), ['cooldown'] = 90,
+        ['constellation'] = 371810, ['ability'] = 375013, ['texture'] = select(3, GetSpellInfo(375013)), ['cooldown'] = 120,
     },
     [371797] = {
-        ['constellation'] = 371797, ['ability'] = 319322, ['texture'] = select(3, GetSpellInfo(319322)), ['cooldown'] = 90,
+        ['constellation'] = 371797, ['ability'] = 319322, ['texture'] = select(3, GetSpellInfo(319322)), ['cooldown'] = 120,
     },
     [371790] = {
-        ['constellation'] = 371790, ['ability'] = 320552, ['texture'] = select(3, GetSpellInfo(320552)), ['cooldown'] = 120,
+        ['constellation'] = 371790, ['ability'] = 375040, ['texture'] = select(3, GetSpellInfo(375040)), ['cooldown'] = 120,
     },
 }
 
 ATTdbs.constellationsShare = {
 	--[316254] = 120, -- debug
-	[316231] = 90,
-	[316380] = 45,
+	[375015] = 90,
+	[374992] = 90,
 }
 
 ATTdbs.dbTrinketsMerge = {
