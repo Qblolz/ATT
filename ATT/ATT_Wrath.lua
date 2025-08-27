@@ -604,7 +604,7 @@ function ATT:UpdatePositions()
         else
             if db.positions[k] then
                 local x = db.positions[k].x / scale
-                local y = db.positions[k].y / scale 
+                local y = db.positions[k].y / scale
                 anchors[k]:SetPoint("TOPLEFT", UIParent, "TOPLEFT", x  , y )
             else
                 anchors[k]:SetPoint("CENTER", UIParent, "CENTER")
@@ -666,7 +666,7 @@ local function CreateIcon(anchor)
     local icon = CreateFrame("Frame", anchor:GetName() .. "Icon" .. (#anchor.icons + 1), ATTIcons, "ATTButtonTemplateClassic")
     icon:SetSize(40, 40)
     icon:SetAlpha(db.iconAlpha or 1)
-    
+
     local cd = CreateFrame("Cooldown", icon:GetName() .. "Cooldown", icon, "CooldownFrameTemplate")
     icon.cd = cd
 
@@ -749,21 +749,21 @@ local function CreateIcon(anchor)
         if icon.inUse and db.hidden then ATT:ToggleDisplay(anchor, icon.GUID) end
 
         if icon.inUse and icon.maxcharges and icon.GUID then
-            icon.chargesText:SetText(icon.maxcharges) 
+            icon.chargesText:SetText(icon.maxcharges)
             activeGUIDS[icon.GUID][icon.abilityID].chargeleft = icon.maxcharges
         end
     end
 
     icon.SetTimer = function(starttime, cooldown, rate, isRate, charges, isSync)
        if activeBUFFS[icon.GUID] and activeBUFFS[icon.GUID][icon.abilityID] then return end --freeprocs
-        
+
        local charges = icon.maxcharges and (charges or getIconCharges(icon))
 
         if icon.raterecovery and icon.inUse and not isRate then
              rate = icon.raterecovery
-          if isSync then 
+          if isSync then
             starttime = GetTime() * (1 - rate) + icon.starttime * rate
-          else 
+          else
              starttime = icon.starttime - ((icon.starttime - starttime) * rate)
           end
              cooldown = icon.cooldown * rate
@@ -775,7 +775,7 @@ local function CreateIcon(anchor)
             CooldownFrame_Set(cd, starttime, cooldown, true, false, rate)
             icon.active = true
             icon.starttime = starttime
- 
+
             activeGUIDS[icon.GUID] = activeGUIDS[icon.GUID] or {}
             activeGUIDS[icon.GUID][icon.abilityID] = activeGUIDS[icon.GUID][icon.abilityID] or {}
             activeGUIDS[icon.GUID][icon.abilityID].starttime = icon.starttime
@@ -1460,6 +1460,18 @@ function ATT:UNIT_SPELLCAST_SUCCEEDED(unit, ability)
     if SentID == 320552 and unit and guid then
         self:StartCooldown(GetSpellInfo(320552), unit, SentID)
     end
+    if SentID == 6346 and unit and guid then
+        self:StartCooldown(GetSpellInfo(6346), unit, SentID)
+    end
+    if SentID == 375040 and unit and guid then
+        self:StartCooldown(GetSpellInfo(375040), unit, SentID)
+    end
+    if SentID == 374994 and unit and guid then
+        self:StartCooldown(GetSpellInfo(374994), unit, SentID)
+    end
+    if SentID == 375010 and unit and guid then
+        self:StartCooldown(GetSpellInfo(375010), unit, SentID)
+    end
 end
 
 -- resets all icons
@@ -1486,7 +1498,7 @@ end
 function ATT:ProcessSync(anchor, spellId, cooldownInfo)
      local isReady, normalizedPercent, timeLeft, charges, minValue, maxValue, currentValue = ATTdbs:GetCooldownInfo(cooldownInfo)
      local spellName = GetSpellInfo(spellId)
- 
+
          for k, icon in ipairs(anchor.icons) do
              if (not isReady) and timeLeft and  timeLeft > 0 and icon.inUse and icon.ability == spellName then
                  local start = currentValue - icon.cooldown + timeLeft --processing time
@@ -1501,13 +1513,13 @@ function ATT:ProcessSync(anchor, spellId, cooldownInfo)
            end
         end
  end
- 
+
  function ATTdbs:OnReceiveCooldownUpdate(unitId, spellId, cooldownInfo)
     local anchor = ATT:GetAnchorByUnit(unitId)
     if not anchor or not spellId or not cooldownInfo then return end
     local guid = UnitGUID(unitId)
 
-    if not dbInspect[guid] and syncChache[guid] then 
+    if not dbInspect[guid] and syncChache[guid] then
         syncChache[guid][spellId] = cooldownInfo
     end
 
@@ -1519,7 +1531,7 @@ function ATTdbs:OnReceiveCooldownListUpdate(unitId, unitCooldows)
     if not anchor or not unitCooldows then return end
     local guid = UnitGUID(unitId)
 
-    if not dbInspect[guid] then 
+    if not dbInspect[guid] then
         syncChache[guid] = unitCooldows
     end
 
