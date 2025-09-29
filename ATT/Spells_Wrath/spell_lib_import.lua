@@ -272,17 +272,17 @@ ATTdbs.constellations = {
         ['constellation'] = 371803, ['ability'] = 375024, ['texture'] = select(3, GetSpellInfo(375024)), ['cooldown'] = 120,
     },
     [371788] = {
-        ['constellation'] = 371788, ['ability'] = 375001, ['texture'] = select(3, GetSpellInfo(316418)), ['cooldown'] = 120,
+        ['constellation'] = 371788, ['ability'] = 375001, ['texture'] = select(3, GetSpellInfo(375001)), ['cooldown'] = 120,
         ['alt'] = {[316421] = 1, [302387] = 1, [316419] = 1, [316420] = 1},
     },
     [371805] = {
-        ['constellation'] = 371805, ['ability'] = 374994, ['texture'] = select(3, GetSpellInfo(316386)), ['cooldown'] = 120,
+        ['constellation'] = 371805, ['ability'] = 374994, ['texture'] = select(3, GetSpellInfo(374994)), ['cooldown'] = 120,
     },
     [371806] = {
         ['constellation'] = 371806, ['ability'] = 374996, ['texture'] = select(3, GetSpellInfo(374996)), ['cooldown'] = 120,
     },
     [371800] = {
-        ['constellation'] = 371800, ['ability'] = 375018, ['texture'] = select(3, GetSpellInfo(316254)), ['cooldown'] = 120,
+        ['constellation'] = 371800, ['ability'] = 375018, ['texture'] = select(3, GetSpellInfo(375018)), ['cooldown'] = 120,
         --['alt'] = {[130] = 1}, -- debug
     },
     [371802] = {
