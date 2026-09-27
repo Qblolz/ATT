@@ -49,7 +49,7 @@ jobs:
           version="${{ steps.meta.outputs.version }}"
           out="$(mktemp -d)"
           mkdir -p "$out/${folder}"
-          tar --exclude='./.git' --exclude='./.github' -cf - . | ( cd "$out/${folder}" && tar -xf - )
+          tar --exclude='./.git' --exclude='./.github' --exclude='./.gitignore' --exclude='./.gitattributes' -cf - . | ( cd "$out/${folder}" && tar -xf - )
           ( cd "$out" && zip -qr "${folder}-${version}.zip" "${folder}" )
           echo "asset=$out/${folder}-${version}.zip" >> "$GITHUB_OUTPUT"
           unzip -l "$out/${folder}-${version}.zip" | head -n 15
