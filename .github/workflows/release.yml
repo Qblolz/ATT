@@ -1,0 +1,73 @@
+name: release
+
+on:
+  push:
+    branches: ["**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Read version from .toc
+        id: meta
+        shell: bash
+        run: |
+          set -euo pipefail
+          toc="$(ls -1 *.toc 2>/dev/null | head -n1 || true)"
+          if [ -z "$toc" ]; then
+            echo "::error::No .toc file found at repository root"
+            exit 1
+          fi
+          folder="${toc%.toc}"
+          ver="$(grep -iE '^[[:space:]]*##[[:space:]]*Version:[[:space:]]*' "$toc" | head -n1 | sed -E 's/^[[:space:]]*##[[:space:]]*Version:[[:space:]]*//' | tr -d '\r' | sed -E 's/[[:space:]]+$//')"
+          [ -z "$ver" ] && ver="0.0.0"
+          ver="${ver#v}"
+          ver="${ver#V}"
+          ver="$(echo "$ver" | sed -E 's/[^A-Za-z0-9._-]+/-/g; s/^[-.]+//; s/[-.]+$//')"
+          bslug="$(echo "${GITHUB_REF_NAME}" | sed -E 's/[^A-Za-z0-9._-]+/-/g; s/^[-.]+//; s/[-.]+$//')"
+          tag="${bslug}-v${ver}"
+          {
+            echo "toc=$toc"
+            echo "folder=$folder"
+            echo "version=$ver"
+            echo "tag=$tag"
+          } >> "$GITHUB_OUTPUT"
+          echo "toc=$toc folder=$folder version=$ver tag=$tag"
+
+      - name: Package addon into folder named after .toc
+        id: pack
+        shell: bash
+        run: |
+          set -euo pipefail
+          folder="${{ steps.meta.outputs.folder }}"
+          version="${{ steps.meta.outputs.version }}"
+          out="$(mktemp -d)"
+          mkdir -p "$out/${folder}"
+          tar --exclude='./.git' --exclude='./.github' -cf - . | ( cd "$out/${folder}" && tar -xf - )
+          ( cd "$out" && zip -qr "${folder}-${version}.zip" "${folder}" )
+          echo "asset=$out/${folder}-${version}.zip" >> "$GITHUB_OUTPUT"
+          unzip -l "$out/${folder}-${version}.zip" | head -n 15
+
+      - name: Create or update release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag="${{ steps.meta.outputs.tag }}"
+          folder="${{ steps.meta.outputs.folder }}"
+          asset="${{ steps.pack.outputs.asset }}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" "$asset" --clobber
+          else
+            gh release create "$tag" "$asset" \
+              --target "$GITHUB_SHA" \
+              --title "${folder} ${tag}" \
+              --generate-notes
+          fi
